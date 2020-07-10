@@ -1,0 +1,14 @@
+<div><label>Movie Id: <input type="text" [(ngModel)]="movieId"/></label></div>
+<div><button class="button" (click)="getMovieInformation()">submit</button></div>
+<div class="center" *ngIf="response">
+  <div class="card-group">
+    <div class="card" style="width: 18rem;" *ngFor="let movie of response.movies">
+      <img class="card-img" src="https://image.tmdb.org/t/p/w200{{movie.poster_path}}" alt="Card image cap">
+      <div class="container">
+        <h5 class="card-title">{{movie.original_title}}</h5>
+        <p class="card-text">{{movie.overview}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
