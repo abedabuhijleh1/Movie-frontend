@@ -5,12 +5,10 @@ import { AppComponent } from './app.component';
 import {ViewModule} from './view/view.module';
 import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { NavigationBarComponent } from './view/navigation-bar/navigation-bar.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavigationBarComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -19,6 +17,6 @@ import { NavigationBarComponent } from './view/navigation-bar/navigation-bar.com
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
