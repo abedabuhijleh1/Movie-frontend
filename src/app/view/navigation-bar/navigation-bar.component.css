@@ -5,3 +5,11 @@
 span {
   padding-right: 1rem;
 }
+
+button {
+  margin-left: 15px;
+}
+
+[hidden] {
+  display: none;
+}
