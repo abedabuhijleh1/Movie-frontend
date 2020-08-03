@@ -3,6 +3,7 @@ import {AuthServiceService} from '../services/auth-service.service';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import { finalize } from "rxjs/operators";
+import {CookieService} from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -14,15 +15,14 @@ export class NavigationBarComponent implements OnInit {
   @Input("pageTitle")
   pageTitle: string;
 
-  constructor(private app: AuthServiceService, private http: HttpClient, private router: Router) {
+  constructor(private app: AuthServiceService, private http: HttpClient, private router: Router,
+              private cookieService: CookieService) {
   }
 
   logout() {
-    this.http.post('logout', {}).pipe(
-      finalize(() => {
       this.app.authenticated = false;
+      this.cookieService.delete('jwtToken');
       this.router.navigateByUrl('/login');
-    })).subscribe();
   }
 
 

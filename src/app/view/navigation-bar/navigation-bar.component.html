@@ -5,10 +5,10 @@
       <button routerLink="/" mat-mini-fab color="warn" aria-label="Example icon button with a home icon">
         <mat-icon>home</mat-icon>
       </button>
-      <button [hidden]="authenticated()" (click)="logout()" routerLink="/logout" mat-mini-fab color="warn" aria-label="Example icon button with a home icon">
+      <button [hidden]="!authenticated()" (click)="logout()" mat-mini-fab color="warn" aria-label="Example icon button with a home icon">
         <mat-icon>input</mat-icon>
       </button>
-      <button [hidden]="!authenticated()" routerLink="/login" mat-raised-button color="warn">
+      <button [hidden]="authenticated()" routerLink="/login" mat-raised-button color="warn">
         Login
       </button>
     </span>
