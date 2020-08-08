@@ -49,4 +49,12 @@ export class AuthServiceService {
     return false;
   }
 
+  public getUserIdFromJwt(){
+    const jwtToken = this.cookieService.get('jwtToken');
+    let jwtData = jwtToken.split('.')[1];
+    let decodedJwtJsonData = window.atob(jwtData);
+    let decodedJwtData = JSON.parse(decodedJwtJsonData);
+    return decodedJwtData.jti;
+  }
+
 }
