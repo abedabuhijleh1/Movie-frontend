@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthServiceService} from '../../services/auth-service.service';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
+import {CookieService} from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,8 @@ export class LoginComponent implements OnInit {
 
   credentials = {username: '', password: ''};
 
-  constructor(private app: AuthServiceService, private http: HttpClient, private router: Router) { }
+  constructor(private app: AuthServiceService, private http: HttpClient, private router: Router,
+              private cookieService: CookieService) { }
 
   ngOnInit(): void {
   }
@@ -26,6 +28,10 @@ export class LoginComponent implements OnInit {
 
   err(){
     return this.app.err;
+  }
+
+  authenticated() {
+    return this.cookieService.get("jwtToken") != '';
   }
 
 }

@@ -6,7 +6,6 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 @Injectable()
 export class AuthServiceService {
 
-  authenticated = false;
   err: boolean = false;
 
   constructor(private http: HttpClient, private cookieService: CookieService, public jwtHelper: JwtHelperService) {
@@ -16,7 +15,6 @@ export class AuthServiceService {
     this.http.post('http://localhost:8080/authenticate',
       {username:credentials.username, password:credentials.password})
       .subscribe(response => {
-      this.authenticated = !!response['jwt'];
       this.cookieService.set( 'jwtToken', response['jwt'] );
       return callback && callback();
     },

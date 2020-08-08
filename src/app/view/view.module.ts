@@ -30,13 +30,6 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatStepperModule} from '@angular/material/stepper';
-import {MatTreeModule} from '@angular/material/tree';
-import {PortalModule} from '@angular/cdk/portal';
-import {OverlayModule} from '@angular/cdk/overlay';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatTableModule} from '@angular/material/table';
-import {MatSortModule} from '@angular/material/sort';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSliderModule} from '@angular/material/slider';
@@ -47,7 +40,6 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import {ScrollingModule} from '@angular/cdk/scrolling';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 

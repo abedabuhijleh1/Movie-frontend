@@ -2,7 +2,6 @@ import {Component, Input, OnInit} from '@angular/core';
 import {AuthServiceService} from '../services/auth-service.service';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
-import { finalize } from "rxjs/operators";
 import {CookieService} from 'ngx-cookie-service';
 
 @Component({
@@ -20,7 +19,6 @@ export class NavigationBarComponent implements OnInit {
   }
 
   logout() {
-      this.app.authenticated = false;
       this.cookieService.delete('jwtToken');
       this.router.navigateByUrl('/login');
   }
@@ -30,6 +28,6 @@ export class NavigationBarComponent implements OnInit {
   }
 
   authenticated() {
-    return this.app.authenticated;
+    return this.cookieService.get("jwtToken") != '';
   }
 }

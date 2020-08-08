@@ -4,7 +4,7 @@
   <mat-toolbar class="cardTitle">
     <span>LOGIN</span>
   </mat-toolbar>
-  <mat-card-content>
+  <mat-card-content *ngIf="!authenticated()">
     <form class="my-form" (submit)="login()">
       <mat-form-field class="full-width" appearance="outline">
         <mat-label>Username</mat-label>
@@ -22,5 +22,8 @@
         <button mat-raised-button type="submit" color="primary">LOGIN</button>
       </mat-card-actions>
     </form>
+  </mat-card-content>
+  <mat-card-content *ngIf="authenticated()">
+    <mat-label class="matMessage">You are already logged In! Go to <a routerLink="/home">home</a>.</mat-label>
   </mat-card-content>
 </mat-card>
