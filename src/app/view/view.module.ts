@@ -42,6 +42,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { SearchComponent } from './search/search.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 
@@ -50,7 +52,8 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
     MainComponent,
     NavigationBarComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    SearchComponent
   ],
   imports: [
     CommonModule,
@@ -92,7 +95,8 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
     MatSliderModule,
     MatSlideToggleModule,
     MatSnackBarModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    MatTooltipModule
   ],
   exports: [
     MainComponent

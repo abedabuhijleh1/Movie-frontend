@@ -4,6 +4,7 @@ import {MainComponent} from './view/main/main.component';
 import {LoginComponent} from './view/auth/login/login.component';
 import {AuthGuardService} from './view/services/auth-guard.service';
 import {SignUpComponent} from './view/auth/sign-up/sign-up.component';
+import {SearchComponent} from './view/search/search.component';
 
 const routes: Routes = [
   {
@@ -14,7 +15,11 @@ const routes: Routes = [
     path: "signUp",
     component: SignUpComponent
   },
-
+  {
+    path: 'search',
+    component: SearchComponent,
+    canActivate: [AuthGuardService]
+  },
   {
     path: '**',
     component: MainComponent,

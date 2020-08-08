@@ -1,0 +1,8 @@
+<app-navigation-bar pageTitle="Search for a movie to rate!"></app-navigation-bar>
+<mat-form-field appearance="outline" class="searchBox">
+  <mat-label>Movie Keyword</mat-label>
+  <label><input matInput placeholder="Search"></label>
+</mat-form-field>
+<button (click)="search()" mat-raised-button color="warn" matTooltip="search" class="searchButton">
+  <mat-icon>search</mat-icon>
+</button>

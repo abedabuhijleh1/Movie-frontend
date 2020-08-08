@@ -1,11 +1,15 @@
 <mat-toolbar color="primary" class="navBar">
   <div>{{ pageTitle }}</div>
   <div>
+
     <span>
-      <button [hidden]="!authenticated()" routerLink="/" mat-mini-fab color="warn" aria-label="Example icon button with a home icon">
+      <button [hidden]="!authenticated()" routerLink="/" mat-mini-fab color="warn" matTooltip="home">
         <mat-icon>home</mat-icon>
       </button>
-      <button [hidden]="!authenticated()" (click)="logout()" mat-mini-fab color="warn" aria-label="Example icon button with a home icon">
+      <button [hidden]="!authenticated()" routerLink="/search" mat-mini-fab color="warn" matTooltip="Search">
+        <mat-icon>search</mat-icon>
+      </button>
+      <button [hidden]="!authenticated()" (click)="logout()" mat-mini-fab color="warn" matTooltip="logout">
         <mat-icon>input</mat-icon>
       </button>
       <button [hidden]="authenticated()" routerLink="/login" mat-raised-button color="warn">
