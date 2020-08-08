@@ -41,6 +41,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
 
 
 
@@ -48,7 +49,8 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
   declarations: [
     MainComponent,
     NavigationBarComponent,
-    LoginComponent
+    LoginComponent,
+    SignUpComponent
   ],
   imports: [
     CommonModule,

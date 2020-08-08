@@ -16,11 +16,25 @@ export class AuthServiceService {
       {username:credentials.username, password:credentials.password})
       .subscribe(response => {
       this.cookieService.set( 'jwtToken', response['jwt'] );
+      this.err = false;
       return callback && callback();
     },
     error => {
       this.err = true;
     });
+  }
+
+  register(credentials, callback) {
+    this.http.post('http://localhost:8080/register',
+      {username:credentials.username, password:credentials.password})
+      .subscribe(response => {
+          this.cookieService.set( 'jwtToken', response['jwt'] );
+          this.err = false;
+          return callback && callback();
+        },
+        error => {
+          this.err = true;
+        });
   }
 
   public validJWT(token: string) {
@@ -31,6 +45,7 @@ export class AuthServiceService {
     return this.http.get("http://localhost:8080/validJwt", {headers: headers})
       .subscribe(
       response => {
+        this.err = false;
         return response["message"] == "yes";
         },
       error => {

@@ -1,0 +1,22 @@
+.my-form{
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.full-width {
+  width: 80%;
+}
+
+.my-card {
+  text-align: -webkit-center;
+  margin: 10% 30%;
+}
+
+.cardTitle {
+  margin-bottom: 15px;
+}
+
+.matMessage {
+  font-size: 20px;
+}

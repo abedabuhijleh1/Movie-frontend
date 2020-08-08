@@ -2,7 +2,7 @@
   <div>{{ pageTitle }}</div>
   <div>
     <span>
-      <button routerLink="/" mat-mini-fab color="warn" aria-label="Example icon button with a home icon">
+      <button [hidden]="!authenticated()" routerLink="/" mat-mini-fab color="warn" aria-label="Example icon button with a home icon">
         <mat-icon>home</mat-icon>
       </button>
       <button [hidden]="!authenticated()" (click)="logout()" mat-mini-fab color="warn" aria-label="Example icon button with a home icon">
@@ -10,6 +10,9 @@
       </button>
       <button [hidden]="authenticated()" routerLink="/login" mat-raised-button color="warn">
         Login
+      </button>
+      <button [hidden]="authenticated()" routerLink="/signUp" mat-raised-button color="warn">
+        Sign Up
       </button>
     </span>
   </div>

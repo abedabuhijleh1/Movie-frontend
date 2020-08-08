@@ -1,12 +1,12 @@
-<app-navigation-bar pageTitle="LOGIN PAGE!"></app-navigation-bar>
+<app-navigation-bar pageTitle="Sign Up PAGE!"></app-navigation-bar>
 
 <mat-card class="my-card">
   <mat-toolbar class="cardTitle">
-    <span>LOGIN</span>
+    <span>Sign Up</span>
   </mat-toolbar>
-  <mat-error *ngIf="err()" class="cardTitle">Username and passowrd not match, try again!</mat-error>
+  <mat-error *ngIf="err()" class="cardTitle">Already existed user! try another username please.</mat-error>
   <mat-card-content *ngIf="!authenticated()">
-    <form class="my-form" (submit)="login()">
+    <form class="my-form" (submit)="register()">
       <mat-form-field class="full-width" appearance="outline">
         <mat-label>Username</mat-label>
         <label>
@@ -20,7 +20,7 @@
         </label>
       </mat-form-field>
       <mat-card-actions>
-        <button mat-raised-button type="submit" color="primary">LOGIN</button>
+        <button mat-raised-button type="submit" color="primary">Sign Up</button>
       </mat-card-actions>
     </form>
   </mat-card-content>
