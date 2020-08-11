@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-search',
@@ -7,13 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  searchQuery: string;
+  response: any;
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
   }
 
 
   search() {
-    //todo create the api
+    this.http.get("http://localhost:8083/movie/search/" + this.searchQuery)
+      .subscribe((response) => {
+        this.response = response;
+      });
   }
 }

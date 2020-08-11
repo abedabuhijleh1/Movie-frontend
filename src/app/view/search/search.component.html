@@ -1,8 +1,21 @@
 <app-navigation-bar pageTitle="Search for a movie to rate!"></app-navigation-bar>
 <mat-form-field appearance="outline" class="searchBox">
   <mat-label>Movie Keyword</mat-label>
-  <label><input matInput placeholder="Search"></label>
+  <label><input matInput placeholder="Search" [(ngModel)]="searchQuery"></label>
 </mat-form-field>
 <button (click)="search()" mat-raised-button color="warn" matTooltip="search" class="searchButton">
   <mat-icon>search</mat-icon>
 </button>
+<div class="center" *ngIf="response">
+  <div class="card-group">
+      <div class="card" style="width: 18rem;" *ngFor="let movie of response.movieInformationList">
+          <a routerLink="/movieRate" [queryParams]="{ id: movie.id}">
+            <img class="card-img" src="https://image.tmdb.org/t/p/w200{{movie.poster_path}}" alt="Card image cap">
+            <div class="container">
+              <h5 class="card-title">{{movie.original_title}}</h5>
+              <p class="card-text">{{movie.overview}}</p>
+            </div>
+          </a>
+      </div>
+  </div>
+</div>

@@ -44,6 +44,7 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { SearchComponent } from './search/search.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MovieRateComponent} from './movie-rate/movie-rate.component';
 
 
 
@@ -53,7 +54,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     NavigationBarComponent,
     LoginComponent,
     SignUpComponent,
-    SearchComponent
+    SearchComponent,
+    MovieRateComponent
   ],
   imports: [
     CommonModule,

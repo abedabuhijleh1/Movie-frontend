@@ -5,6 +5,7 @@ import {LoginComponent} from './view/auth/login/login.component';
 import {AuthGuardService} from './view/services/auth-guard.service';
 import {SignUpComponent} from './view/auth/sign-up/sign-up.component';
 import {SearchComponent} from './view/search/search.component';
+import {MovieRateComponent} from './view/movie-rate/movie-rate.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,11 @@ const routes: Routes = [
   {
     path: 'search',
     component: SearchComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'movieRate',
+    component: MovieRateComponent,
     canActivate: [AuthGuardService]
   },
   {

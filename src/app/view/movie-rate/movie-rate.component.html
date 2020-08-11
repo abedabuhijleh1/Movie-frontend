@@ -1,0 +1,22 @@
+<app-navigation-bar pageTitle="YOUR RATED MOVIES!"></app-navigation-bar>
+
+<div class="center" *ngIf="response">
+  <div class="card-group">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img" src="https://image.tmdb.org/t/p/w200{{response.poster_path}}" alt="Card image cap">
+      <div class="container">
+        <h5 class="card-title">{{response.original_title}}</h5>
+        <p class="card-text">{{response.overview}}</p>
+        <p class="card-text">How much do you rate this movie from 10 ?
+          <mat-form-field appearance="outline" class="searchBox">
+            <mat-label>Movie Rate</mat-label>
+            <label><input matInput placeholder="Movie Rate" [(ngModel)]="movieRate"></label>
+          </mat-form-field>
+          <button (click)="submitRate()" mat-raised-button color="warn" matTooltip="search" class="searchButton">
+            submit
+          </button>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
